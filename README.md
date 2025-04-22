@@ -9,6 +9,7 @@ again cd
 
 
 ![image](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
+```
 
 cd 
 ls 
