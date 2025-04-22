@@ -1,6 +1,8 @@
 # nasscom-vsd-soc-design-workshop
 Lab 1 : How to open the openflow
-Linux commands used: - cd change directory -ls - -ltr list in chro order 
+Linux commands used: - cd change directory 
+-ls 
+* -ltr // list in chro order 
 steps: Open virtual box file after the successfull installation and configuration
 Power on the machine
 and after logging in inside the created folder for the workshop labs, open terminal
