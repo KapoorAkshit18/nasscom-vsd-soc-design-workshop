@@ -17,8 +17,8 @@ Magic Tool
 As per Fossi Dial up 
 Magic tool is more than DRC, it can read and write GDS.It can extract and netlist (SPICE file).LEF(Library Exchange File)/DEF(Design Exchange File) compatible.Wiring refers to physical joining of the network elements whereas routing defines rules for that.This feature is also included in the Magic.Plots are available for the analysis of the results in a graphical manner.
 More features
--Paint and Erase 
--Instead of bins it works on single base 
+- Paint and Erase 
+- Instead of bins it works on single base 
 
  
 
