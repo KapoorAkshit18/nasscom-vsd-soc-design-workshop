@@ -30,9 +30,9 @@ More features
 **Lab 1** : How to open the openflow
 Linux commands used:
 ```
-cd // to change directory 
-ls   // to list items
-ltr // list in chro order 
+cd    // to change directory 
+ls    // to list items
+ltr   // list in chro order 
 ```
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
@@ -41,6 +41,25 @@ ltr // list in chro order
 The folder with timestamp is created where all of the results for the design is stored
 ![image](https://github.com/user-attachments/assets/844248e7-5d1a-4ec8-a863-d3bd801ff187)
 
+The picorv32a design compilation
+
+![image](https://github.com/user-attachments/assets/070d462c-608f-41eb-a1ce-eb7f5a3be5c9)
+
+The synthesized results are seen by  `less` command
+
+![image](https://github.com/user-attachments/assets/bbf5b85b-3120-4614-9a4d-da4b756f135d)
+![image](https://github.com/user-attachments/assets/66470a0a-7025-4dfa-95d0-e0e1f7fdf9bf)
+
+Assessment 1 flop ratio 
+
+Equals to  10.84 percentile 
+
+Assessment 2 area of the die 
+
+ die height  and die width calculation by subtracting down leftmost corner from top rightmost corner == 443587.2122325 in microns squar
+
+
+**Lab**  To create layout of the picorv32a
 
 
 ![image](https://github.com/user-attachments/assets/71594757-1148-4315-baa7-d290df83a779)
