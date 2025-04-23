@@ -20,12 +20,11 @@ More features
 - Paint and Erase 
 - Instead of bins it works on single base 
 
- Total 8 labs along with the assessments are conducted.
+   Labs along with the assessments are conducted.
 
   
 </details>
-## Projects 
-### Lab 1 : How to open the openflow
+*Lab 1* : How to open the openflow
 Linux commands used:
 ```
 cd // to change directory 
@@ -34,7 +33,11 @@ ltr // list in chro order
 
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
-##LAB 2 
+##LAB 2 To run synthesis and floorplan 
+
+The folder with timestamp is created where all of the results for the design is stored
+![image](https://github.com/user-attachments/assets/844248e7-5d1a-4ec8-a863-d3bd801ff187)
+
 
 
 ![image](https://github.com/user-attachments/assets/71594757-1148-4315-baa7-d290df83a779)
