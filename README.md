@@ -24,13 +24,16 @@ More features
 
   
 </details>
+
+
+
 *Lab 1* : How to open the openflow
 Linux commands used:
 ```
 cd // to change directory 
 ls   // to list items
 ltr // list in chro order 
-
+```
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
 ##LAB 2 To run synthesis and floorplan 
