@@ -1,7 +1,7 @@
 # nasscom-vsd-soc-design-workshop
-## INTRODUCTION
+
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click ## INTRODUCTION </summary>
 EDA tools and opensource being an advantage.The workshop includes short videos and gives a good understanding for how chip design process forks.It tells how ASIC design flow works with more emphasis on the Back-End.
 The Back-End usually involves steps like Synthesis,STA of the .v file then Design for Testability (DFT), Physical Design, then Physical Verification and finally the GDS-II file creation.Gds is the file saving format given to the foundries and normally it is in binary involving geometric shapes.
 
