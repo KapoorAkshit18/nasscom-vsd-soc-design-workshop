@@ -50,18 +50,20 @@ The synthesized results are seen by  `less` command
 ![image](https://github.com/user-attachments/assets/bbf5b85b-3120-4614-9a4d-da4b756f135d)
 ![image](https://github.com/user-attachments/assets/66470a0a-7025-4dfa-95d0-e0e1f7fdf9bf)
 
-Assessment 1 flop ratio 
+*Assessment 1* flop ratio 
 
 Equals to  10.84 percentile 
 
-Assessment 2 area of the die 
+*Assessment 2* area of the die 
 
- die height  and die width calculation by subtracting down leftmost corner from top rightmost corner == 443587.2122325 in microns squar
+ die height  and die width calculation by subtracting down leftmost corner from top rightmost corner == 443587.2122325 in microns square
+
+ ![image](https://github.com/user-attachments/assets/ea5581aa-c365-4d11-83a8-cd75a775df5b)
+
 
 
 **Lab**  To create layout of the picorv32a
 
 
 ![image](https://github.com/user-attachments/assets/71594757-1148-4315-baa7-d290df83a779)
-
 
