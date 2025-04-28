@@ -38,6 +38,10 @@ ltr   // list in chro order
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
 **LAB 2** To run synthesis and floorplan 
+after openlane is opened type command `prep -design picorv32a`
+after seeing the success preperation message like below 
+![image](https://github.com/user-attachments/assets/f8ef0213-537e-4d7e-b3e3-f551ced1a640)
+
 
 The folder with timestamp is created where all of the results for the design is stored
 ![image](https://github.com/user-attachments/assets/844248e7-5d1a-4ec8-a863-d3bd801ff187)
