@@ -65,7 +65,7 @@ Equals to  10.84 percentile
 
 **Lab**  To create layout of the picorv32a
 
-In the results directory of the floorplan open it in the terminal and type below command:
+In the results directory of the floorplan open it in the terminal and type  command:
 `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &` 
 
 ![image](https://github.com/user-attachments/assets/71594757-1148-4315-baa7-d290df83a779)
