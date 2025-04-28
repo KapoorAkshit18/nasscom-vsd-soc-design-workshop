@@ -76,7 +76,9 @@ again the synthesis process is followed in sequence creating folder named 28-04-
 ![image](https://github.com/user-attachments/assets/7c534eca-cafe-4bb8-a336-9cd1969d1b20)
 
 
-Further more the equidistant nature is changed for some reason and below files are again revisied
+Further more the equidistant nature is changed for some reason and below files are again revisied 
+![image](https://github.com/user-attachments/assets/7076d4f7-8b39-4add-9ca9-ee3ab139ebbe)
+
 ![image](https://github.com/user-attachments/assets/03b6b051-7205-4bb6-9244-4b6ecc5f962a)
 
 
