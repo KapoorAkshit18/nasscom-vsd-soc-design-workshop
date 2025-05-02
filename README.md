@@ -73,7 +73,8 @@ In the results directory of the floorplan open it in the terminal and type  comm
 `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &` 
 
 ![image](https://github.com/user-attachments/assets/71594757-1148-4315-baa7-d290df83a779)
-from zooming the blocks are seen with its unique role in overall
+from zooming the blocks are seen with its unique role in overall  
+
 
 **Placement**
 again the synthesis process is followed in sequence creating folder named 28-04-11:55  to `run_placement`   
