@@ -76,20 +76,24 @@ In the results directory of the floorplan open it in the terminal and type  comm
 from zooming the blocks are seen with its unique role in overall
 
 **Placement**
-again the synthesis process is followed in sequence creating folder named 28-04-11:55  to `run_placement` 
+again the synthesis process is followed in sequence creating folder named 28-04-11:55  to `run_placement`   
+
 ![image](https://github.com/user-attachments/assets/7c534eca-cafe-4bb8-a336-9cd1969d1b20)
 
 
-Further more the equidistant nature is changed for some reason and below files are again revisied 
+Further more the equidistant nature is changed for some reason and below files are again revisied  
+
 ![image](https://github.com/user-attachments/assets/7076d4f7-8b39-4add-9ca9-ee3ab139ebbe)
 
-![image](https://github.com/user-attachments/assets/03b6b051-7205-4bb6-9244-4b6ecc5f962a)
+![image](https://github.com/user-attachments/assets/03b6b051-7205-4bb6-9244-4b6ecc5f962a)  
+
 ![image](https://github.com/user-attachments/assets/fc4c6f18-8d86-4cab-a9b7-77e064209dc9)
 
 git cloning step for the custom inverter 
 ![image](https://github.com/user-attachments/assets/9cd5bcc1-4a69-49d2-a564-a6dc9f90f80a)
 
-n and p well is identified by clicking on the S and by arrow keys for navigating it 
+n and p well is identified by clicking on the S and by arrow keys for navigating it  
+
 ![image](https://github.com/user-attachments/assets/cffa7806-8191-499d-b9ab-6a2e81b3dc23)
 
 the cloned repositry explains the steps involved for the RTL to GDSII flow  
