@@ -100,10 +100,19 @@ n and p well is identified by clicking on the S and by arrow keys for navigating
 
 the cloned repositry explains the steps involved for the RTL to GDSII flow  
 
-
-![image](https://github.com/user-attachments/assets/b5bacf1a-7a8d-4012-ae52-87e5bb3b877f)  
 deleting part of an area thus getting an error in DRC
-which is indicated by red colour 
+which is indicated by red colour  
+creation of spice file by running following commands in the tkcon terminal with the inverter being not modified
+```
+pwd
+extract all                      // this will make .ext file
+ext2spice cthresh 0 thresh 0     // this will extract parasitics 
+ext2spice                          // finally spice file will be created by this commant
+```
+![image](https://github.com/user-attachments/assets/d210ebea-dda6-4afa-96ed-928108f6d27e)  
+
+![image](https://github.com/user-attachments/assets/da0c115b-45e4-4fee-8792-0562fdd3b656)
+
 
 
 
