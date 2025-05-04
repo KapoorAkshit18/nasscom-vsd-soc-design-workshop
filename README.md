@@ -118,6 +118,7 @@ now zoom in and do the selection of the box and run the command `box`
   
   ![image](https://github.com/user-attachments/assets/43b26074-34a1-492e-9dc4-70a5bfa50017)
 
+next step would be editing the spice file 
 
 
 
