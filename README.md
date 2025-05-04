@@ -101,8 +101,9 @@ n and p well is identified by clicking on the S and by arrow keys for navigating
 the cloned repositry explains the steps involved for the RTL to GDSII flow  
 
 
-![image](https://github.com/user-attachments/assets/b5bacf1a-7a8d-4012-ae52-87e5bb3b877f)
-
+![image](https://github.com/user-attachments/assets/b5bacf1a-7a8d-4012-ae52-87e5bb3b877f)  
+deleting part of an area thus getting an error in DRC
+which is indicated by red colour 
 
 
 
