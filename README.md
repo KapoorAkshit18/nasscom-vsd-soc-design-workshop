@@ -113,6 +113,8 @@ ext2spice                          // finally spice file will be created by this
 
 ![image](https://github.com/user-attachments/assets/da0c115b-45e4-4fee-8792-0562fdd3b656)
 
+now going to the window option set the 0.10 micro metre grid 
+now zoom in and do the selection of the box and run the command `box`
 
 
 
