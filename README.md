@@ -33,21 +33,22 @@ Linux commands used:
 ```
 cd    // to change directory 
 ls    // to list items
-ltr   // list in chro order 
+ltr   // list in chro order
+pwd   // shows current directory
+cd ../  // makes the directory levele two step up 
 ```
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
 **LAB 2** To run synthesis and floorplan 
 after openlane is opened type command `prep -design picorv32a`
-after seeing the success preperation message like below 
-![image](https://github.com/user-attachments/assets/f8ef0213-537e-4d7e-b3e3-f551ced1a640)
+after seeing the success preperation message like below  
 
+![image](https://github.com/user-attachments/assets/f8ef0213-537e-4d7e-b3e3-f551ced1a640)  
 
-The folder with timestamp is created where all of the results for the design is stored
+The folder with timestamp is created where all of the results for the design is stored  
 ![image](https://github.com/user-attachments/assets/844248e7-5d1a-4ec8-a863-d3bd801ff187)
 
-The picorv32a design compilation
-
+The picorv32a design compilation  
 ![image](https://github.com/user-attachments/assets/070d462c-608f-41eb-a1ce-eb7f5a3be5c9)
 
 The synthesized results are seen by  `less` command
