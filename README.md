@@ -2,6 +2,12 @@
 ## 2 weeks workshop (Digital VLSI)
 <details>
   <summary> INTRODUCTION </summary>
+2 week workshop strucured 5 days and example:  
+  below first part is the main section i.e sky130 day 3 after - is its topic and SKY130_D3_SK2 is sub section SKY_L9 is its sub-sub section.This was the format the video lectures were organized.
+Sky130 Day 3 - Design library cell using Magic Layout and ngspice characterization
+SKY130_D3_SK2 - Inception of Layout ÃÂ CMOS fabrication process
+SKY_L9 - Lab steps to create std cell layout and extract spice netlist
+
 EDA tools and opensource being an advantage.The workshop includes short videos and gives a good understanding for how chip design process forks.It tells how ASIC design flow works with more emphasis on the Back-End.
 The Back-End usually involves steps like Synthesis,STA of the .v file then Design for Testability (DFT), Physical Design, then Physical Verification and finally the GDS-II file creation.Gds is the file saving format given to the foundries and normally it is in binary involving geometric shapes.
 
