@@ -139,9 +139,11 @@ the image describes how drain of pmos and nmos are connected together
   ![image](https://github.com/user-attachments/assets/e0849e4a-8bb1-4d78-86c4-d7e0463f18ba)  
   
 how they relates
-pdiff/ndiff is similar to the implants in the cross sectional view of the cmos 
-
-
+pdiff/ndiff is similar to the implants in the cross sectional view of the cmos   
+getting back to spice   
+earlier the spice file for the inverter was created without the parasitcs of cap and res  
+use 'vim sky130_inv.spice'  
+to read the file 
   
   
 
