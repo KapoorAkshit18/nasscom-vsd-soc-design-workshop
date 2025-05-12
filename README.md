@@ -124,7 +124,20 @@ now zoom in and do the selection of the box and run the command `box`
   
   ![image](https://github.com/user-attachments/assets/43b26074-34a1-492e-9dc4-70a5bfa50017)
 
-next step would be editing the spice file 
+next step would be editing the spice file   
+
+![image](https://github.com/user-attachments/assets/4c1f9326-1df8-47f2-bc03-3c891c130c52)  
+the image describes how drain of pmos and nmos are connected together 
+
+  
+  ![image](https://github.com/user-attachments/assets/d5bc46ea-0189-4f22-9d56-704a52d14d63)  
+  this image shows how source of pmos is connected to the ground,and next task would be to know where is drain of nmos here  
+  ![image](https://github.com/user-attachments/assets/1c63de64-1039-4736-a42d-f4522389d960)  
+  this is the image of the 16 mask cmos process from p substrate tp the final stage that after opening the contact holes which is not discussed in the video although might be a good homework.
+
+  
+
+  
 
 
 
