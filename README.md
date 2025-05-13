@@ -161,7 +161,19 @@ C5 VPWR VGND 0.781f
 ~          
 ```
   
-  
+`X1 Y A VPWR VPWR sky130_fd_pr__pfet_01v8 ad=1.44n pd=0.152m as=1.52n ps=0.156m w=37 l=23`  
+if you see this line the X is used to instantiate the subcircuit (in our case it is of pfet) that is present inside the sky130 pdk.
+also,
+
+1. sky130 → SkyWater 130nm process
+
+2. fd → Fully Depleted (not relevant here; historical)
+
+3. pr → Primitive device (used in layout and simulation)
+
+4. pfet → P-type Field Effect Transistor = PMOS
+
+5. 01v8 → Designed for 1.8V nominal operation (core voltage domain in CMOS)
 
 
   
