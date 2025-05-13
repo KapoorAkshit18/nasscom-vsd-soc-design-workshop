@@ -175,6 +175,7 @@ also,
 
 5. 01v8 → Designed for 1.8V nominal operation (core voltage domain in CMOS)
 
+removing subcircuit portion from the generated spice code and adding spice code as per feroz repositry take as reference
 
   
 
