@@ -143,7 +143,23 @@ pdiff/ndiff is similar to the implants in the cross sectional view of the cmos
 getting back to spice   
 earlier the spice file for the inverter was created without the parasitcs of cap and res  
 use 'vim sky130_inv.spice'  
-to read the file 
+to read the file   
+**The spice code understaning whose screenshot can be seen by going up**
+```
+.option scale=10m
+
+.subckt sky130_inv A Y VPWR VGND
+X0 Y A VGND VGND sky130_fd_pr__nfet_01v8 ad=1.44n pd=0.152m as=1.37n ps=0.148m w=35 l=23
+X1 Y A VPWR VPWR sky130_fd_pr__pfet_01v8 ad=1.44n pd=0.152m as=1.52n ps=0.156m w=37 l=23
+C0 VPWR A 0.0774f
+C1 Y A 0.0754f
+C2 VPWR Y 0.117f
+C3 Y VGND 0.279f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+.ends
+~          
+```
   
   
 
