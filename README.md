@@ -34,7 +34,10 @@ Linux Commands used throughout the session
 
 
 
-**Lab 1** : How to open the openflow
+**Lab 1** : To open the openflow 
+1. type `docker` <!-- make sure you are in openlane working directory whose path is /desktop/work/tools/openlane_working_dir/openlane -->
+2. type second command `./flow.tcl -interactive`   <!-- this will open openlane in an interactive mode -->
+3. 
 Linux commands used:
 ```
 cd    // to change directory 
@@ -175,11 +178,19 @@ also,
 
 5. 01v8 → Designed for 1.8V nominal operation (core voltage domain in CMOS)
 
-removing subcircuit portion from the generated spice code and adding spice code as per feroz repositry take as reference
+removing subcircuit portion from the generated spice code and adding spice code as per feroz repositry take as reference  
 
-  
+![image](https://github.com/user-attachments/assets/0ef8f7b4-28fc-4748-a817-e429f8f43d51)  
+after certain modification in the spice code  
+the output was:  
 
-  
+
+![image](https://github.com/user-attachments/assets/6f5a0cd2-bd80-4451-9971-802eaf4ef509)
+
+
+
+
+
 
 
 
