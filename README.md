@@ -188,6 +188,8 @@ the output was:
 
 ![image](https://github.com/user-attachments/assets/6f5a0cd2-bd80-4451-9971-802eaf4ef509)
 
+expected output is 
+![image](https://github.com/user-attachments/assets/c452a673-866b-46d7-9075-a4055fefab09)
 
 
 
