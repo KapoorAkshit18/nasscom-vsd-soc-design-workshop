@@ -8,7 +8,7 @@ Sky130 Day 3 - Design library cell using Magic Layout and ngspice characterizati
 SKY130_D3_SK2 - Inception of Layout ÃÂ CMOS fabrication process
 SKY_L9 - Lab steps to create std cell layout and extract spice netlist
 
-Free and Open Source Software (FOSS)
+Free and Open Source Software (FOSS) and Free And Open Source Silicon (FOSSi)
 EDA tools and opensource being an advantage.The workshop includes short videos and gives a good understanding for how chip design process forks.It tells how ASIC design flow works with more emphasis on the Back-End.
 The Back-End usually involves steps like Synthesis,STA of the .v file then Design for Testability (DFT), Physical Design, then Physical Verification and finally the GDS-II file creation.Gds is the file saving format given to the foundries and normally it is in binary involving geometric shapes.
 
