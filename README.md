@@ -50,8 +50,8 @@ cd ../  // makes the directory levele two step up
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
 **LAB 2** To run synthesis and floorplan 
-after openlane is opened type command `prep -design picorv32a`
-after seeing the success preperation message like below  
+after openlane is opened, type command `prep -design picorv32a`
+The success preperation message will look like below  
 
 ![image](https://github.com/user-attachments/assets/f8ef0213-537e-4d7e-b3e3-f551ced1a640)  
 
