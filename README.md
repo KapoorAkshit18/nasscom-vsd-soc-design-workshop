@@ -38,7 +38,7 @@ Linux Commands used throughout the session
 **Lab 1** : To open the openflow 
 1. type `docker` <!-- make sure you are in openlane working directory whose path is /desktop/work/tools/openlane_working_dir/openlane -->
 2. type second command `./flow.tcl -interactive`   <!-- this will open openlane in an interactive mode -->
-3. 
+
 Linux commands used:
 ```
 cd    // to change directory 
