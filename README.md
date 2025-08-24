@@ -191,6 +191,9 @@ the output was:
 expected output is 
 ![image](https://github.com/user-attachments/assets/c452a673-866b-46d7-9075-a4055fefab09)
 
+<img width="975" height="383" alt="image" src="https://github.com/user-attachments/assets/5e87ebc3-95eb-4f5f-8ae0-cba22084181a" />
+
+
 
 
 
