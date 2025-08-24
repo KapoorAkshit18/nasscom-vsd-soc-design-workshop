@@ -16,6 +16,9 @@ VLSI which stands for Very Large Scaling Industry refers to the scaling of size 
 
 Further more chip architecture was discussed along with basic CMOS(complementary metal oxide semiconductor technology) concept that tells the reason for the steps done in the backend. Further more the workshop was equipped with the labs and assignment as well, which gives hands on experience, and practical insights of the backend process.
 
+From the below image our workshop is more focused towards the team b
+
+<img width="940" height="589" alt="image" src="https://github.com/user-attachments/assets/c7c9d77f-e04e-407d-82b1-cec7a2a09989" />
 
 
 Virutal machine by oracle is utilized as most of the VLSI tools are based on linux so it provides isolated environment for working effectively.Linux has more advantage and for critical process like chip design which is the brain of any device or machine is a preferred choice.This documentation is more of picture based (means do the steps by keeping the images as a reference in your mind) so follow accordingly.
@@ -76,6 +79,7 @@ Equals to  10.84 percentile
 
  ![image](https://github.com/user-attachments/assets/ea5581aa-c365-4d11-83a8-cd75a775df5b)
 
+![Uploading image.png…]()
 
 
 **Lab**  To create layout of the picorv32a
