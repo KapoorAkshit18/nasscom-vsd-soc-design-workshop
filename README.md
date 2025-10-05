@@ -505,10 +505,20 @@ whose result is seen below:
 <img width="957" height="1079" alt="Screenshot 2025-10-05 112544" src="https://github.com/user-attachments/assets/fe918561-82d9-4d95-af8a-53f2bcf76a11" />  
 <img width="967" height="1079" alt="Screenshot 2025-10-05 121655" src="https://github.com/user-attachments/assets/9fd11937-1deb-4607-9ada-b86ccf71505e" />
 
-<img width="960" height="1079" alt="Screenshot 2025-10-05 121904" src="https://github.com/user-attachments/assets/57bbff99-4475-48d2-83db-efb04dd12587" />  
-<img width="962" height="1079" alt="Screenshot 2025-10-05 122006" src="https://github.com/user-attachments/assets/1daedd99-a850-43b5-9833-4fd56da257b4" />
+<img width="960" height="1079" alt="Screenshot 2025-10-05 121904" src="https://github.com/user-attachments/assets/57bbff99-4475-48d2-83db-efb04dd12587" />    
+Final-Timing Reports after Parasitics Extraction:  
 
-  
+<img width="962" height="1079" alt="Screenshot 2025-10-05 122006" src="https://github.com/user-attachments/assets/1daedd99-a850-43b5-9833-4fd56da257b4" />  
+
+ ## Conclusion
+
+* Understood **ASIC Back-End design flow** using OpenLane & Magic
+* Performed **RTL-to-GDSII flow** for `picorv32a` design
+* Created and simulated a **custom inverter** in Magic + ngspice
+* Learned **DRC, placement, floorplan, and SPICE netlist extraction**
+* Gained **hands-on experience** with open-source PDKs and EDA tools
+
+--- 
 
 
 
