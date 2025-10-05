@@ -197,6 +197,26 @@ expected output is
 
 <img width="975" height="383" alt="image" src="https://github.com/user-attachments/assets/5e87ebc3-95eb-4f5f-8ae0-cba22084181a" />
 
+  Downloading the drc by using the following command to perform drc violations fixing:  
+```bash
+
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+tar xfz drc_tests.tgz
+gvim .magicrc
+magic -d XR &
+
+```
+<img width="945" height="919" alt="Screenshot 2025-10-03 165238" src="https://github.com/user-attachments/assets/3cdd2173-1dde-4c21-b099-1549a7e1b2e0" />    
+
+
+
+<img width="952" height="1047" alt="Screenshot 2025-10-03 165523" src="https://github.com/user-attachments/assets/55d45f61-2fbb-48fe-b059-7fb5e932ae6e" />  
+
+ <img width="948" height="1079" alt="Screenshot 2025-10-03 170511" src="https://github.com/user-attachments/assets/0ea0280c-487c-4f05-ab03-2945b6f46103" />  
+
+   
+ 
+
 
 
 
