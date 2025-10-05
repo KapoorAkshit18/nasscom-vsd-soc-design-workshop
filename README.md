@@ -365,7 +365,7 @@ then, we ran `run_cts` by Triton for Clock Tree Synthesis, which will create the
 
   <img width="955" height="1079" alt="Screenshot 2025-10-05 083047" src="https://github.com/user-attachments/assets/caac7fb0-febf-4cb5-9003-f8b4c51259d5" />
 
-then, we used, `read_lef ` and `read_def` commands for POST CTS:  
+then, we used, `read_lef ` and `read_def` commands for POST CTS (1):  
 
 ```bash
 # Command to run OpenROAD tool
@@ -407,6 +407,118 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 # Exit to OpenLANE flow
 exit
 ```
+below are the screenshots of the each commands:
+<img width="957" height="1079" alt="Screenshot 2025-10-05 085035" src="https://github.com/user-attachments/assets/48b87e38-76eb-4d72-a329-56eb70b65352" />    
+
+
+<img width="958" height="1079" alt="Screenshot 2025-10-05 085158" src="https://github.com/user-attachments/assets/0237dc9f-15e4-47dd-9569-3c01b06b52f0" />
+
+
+<img width="961" height="1079" alt="Screenshot 2025-10-05 085516" src="https://github.com/user-attachments/assets/01a47db5-2680-4df1-8a40-a81b1d50a5a4" />  
+
+we checked the slack value once again:  
+
+<img width="957" height="1079" alt="Screenshot 2025-10-05 085555" src="https://github.com/user-attachments/assets/8eb8f0fc-bb3c-405c-be3e-f67ddeb4a9e6" />
+
+```bash
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Removing 'sky130_fd_sc_hd__clkbuf_1' from the list
+set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Checking current value of 'CURRENT_DEF'
+echo $::env(CURRENT_DEF)
+
+# Setting def as placement def
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/04-10_10-12/results/placement/picorv32a.placement.def
+
+# Run CTS again
+run_cts
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+# then we re run the POST CTS (1) commands ran earlier, to observe changes
+```
+<details>
+  make sure to add the following commands:    
+<li> # Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Report hold skew
+report_clock_skew -hold
+
+# Report setup skew
+report_clock_skew -setup   
+</li>
+</details>
+
+
+
+<img width="960" height="1079" alt="Screenshot 2025-10-05 085910" src="https://github.com/user-attachments/assets/0ff563d3-113b-4b3e-8bb7-d61f136582e6" />  
+<img width="953" height="1079" alt="Screenshot 2025-10-05 091404" src="https://github.com/user-attachments/assets/2a73ce32-9cab-44a3-8912-4580181ebb9d" />
+<img width="956" height="1079" alt="Screenshot 2025-10-05 091437" src="https://github.com/user-attachments/assets/2fa49088-dae1-420c-840c-e06a933617c3" />
+<img width="957" height="1079" alt="Screenshot 2025-10-05 091556" src="https://github.com/user-attachments/assets/09a0fce6-e295-4c07-b794-a07c24de7535" />  
+
+#Power Distribution Network And Routing  
+A PDN (or Power Distribution Network) is the complete path that delivers power from the supply to each transistor inside a chip.
+It includes wires, PCB traces, bumps, package pins, on-chip metal layers, and vias.
+
+Along this path, resistance, capacitance, and inductance cause the voltage at the transistors to drop or fluctuate (not perfectly equal to the power supply).  [sourced_https://semiengineering.com/knowledge_centers/low-power/low-power-design/power-delivery-network-pdn/]   
+
+Commands used:  
+```
+gen_pdn
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 18-pdn.def &
+#commands can be different so always cross-check
+```
+<img width="953" height="1079" alt="Screenshot 2025-10-05 093404" src="https://github.com/user-attachments/assets/d81b9186-02ea-4964-a900-e556070f3170" />
+
+<img width="965" height="1079" alt="Screenshot 2025-10-05 092100" src="https://github.com/user-attachments/assets/423eb47d-3c7c-48d6-91f4-670da8541c93" />
+
+ then, we ran `run_routing` for detailed routing.  
+<img width="958" height="1079" alt="Screenshot 2025-10-05 094954" src="https://github.com/user-attachments/assets/d9ece3fa-8c50-40d9-8882-46662d2cbf63" />  
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
+```
+<img width="961" height="1079" alt="Screenshot 2025-10-05 095508" src="https://github.com/user-attachments/assets/f39a3805-2348-4ebc-b28f-c9ce8c0582c9" />  
+<img width="962" height="1075" alt="Screenshot 2025-10-05 095213" src="https://github.com/user-attachments/assets/d58b3848-cea1-4dd9-964f-bf768ef8056f" />
+
+
+##Parasitics Exxtraction    
+Creating the environment for SPEF_EXTRACTOR:
+<img width="956" height="1077" alt="Screenshot 2025-10-05 104417" src="https://github.com/user-attachments/assets/9c2f32b1-c245-4bb8-92a4-53ad4d724421" />  
+We encountered the parsing error:  
+<img width="962" height="1079" alt="Screenshot 2025-10-05 110606" src="https://github.com/user-attachments/assets/aa3c2937-ab93-4a82-8ca8-911547a2ce27" />  
+and fixed it by going to the lef_util.py file and make the following changes in line number 380
+<img width="958" height="1079" alt="Screenshot 2025-10-05 110553" src="https://github.com/user-attachments/assets/dec6eca3-3ee2-439a-8d62-f37a53033aa0" />  
+then, we ran the below command for the extraction process:  
+```ubuntu terminal
+python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/04-10_10-12/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/04-10_10-12/results/routing/picorv32a.def
+```
+whose result is seen below:  
+
+<img width="960" height="1079" alt="Screenshot 2025-10-05 112559" src="https://github.com/user-attachments/assets/c3586f3d-1947-40c3-ac2e-0c6f639b9fa3" />  
+
+<img width="957" height="1079" alt="Screenshot 2025-10-05 112544" src="https://github.com/user-attachments/assets/fe918561-82d9-4d95-af8a-53f2bcf76a11" />  
+<img width="967" height="1079" alt="Screenshot 2025-10-05 121655" src="https://github.com/user-attachments/assets/9fd11937-1deb-4607-9ada-b86ccf71505e" />
+
+<img width="960" height="1079" alt="Screenshot 2025-10-05 121904" src="https://github.com/user-attachments/assets/57bbff99-4475-48d2-83db-efb04dd12587" />  
+<img width="962" height="1079" alt="Screenshot 2025-10-05 122006" src="https://github.com/user-attachments/assets/1daedd99-a850-43b5-9833-4fd56da257b4" />
+
+  
+
+
+
+
+  
+
+
+
+ 
+
 
 
 
