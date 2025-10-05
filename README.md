@@ -337,25 +337,76 @@ then, we note the capacitance value for using it in the sdc written by us. We ha
 
 <img width="955" height="1079" alt="Screenshot 2025-10-04 195549" src="https://github.com/user-attachments/assets/e7b47dcf-a3a7-4009-9764-660f5be42f38" />
 
-then we, use `replace_cell <cell_name> <new_cell_name>` command to reduce the slack by noting the cells having the most delay and fanout and replacing them from the alternatives of it from the library.   
+then we, use `replace_cell <cell_name> <new_cell_name>` command to reduce the slack by noting the cells having the most delay and fanout and replacing them from the alternatives of it from the library. 
+
+<details>command for the report reading ```report_checks -fields {net cap slew input_pins} -digits 4  
+  exit``` </details>
 
 
 <img width="944" height="1079" alt="Screenshot 2025-10-04 203336" src="https://github.com/user-attachments/assets/20ea4aa5-1094-4099-becf-59b6d8355eee" />  
 
 
 <img width="959" height="1079" alt="Screenshot 2025-10-04 204858" src="https://github.com/user-attachments/assets/dc8d1b82-cd02-4351-817e-b1a17aa81c18" />  
-slack reduced by  1.8ns
+slack reduced by  1.8ns. It was achieved through noting the cell number in _   _ format and making the changes accordingly.
 <img width="1085" height="1079" alt="Screenshot 2025-10-04 222138" src="https://github.com/user-attachments/assets/41003e9d-2adf-412f-8cce-cc5407b7007f" />
 
 it is a crucial stage to complete it by using `write_verilog <synthesized netlist name eg. picorv32.v>` command after the possible slack reductions.   
+<details> It is noted that even without saving our Chip area for module was '\picorv32a': 181730.544000 and 
+tns 0.00
+wns 0.00 which was ideal, but how it came is the challenge which is not in the scope of this project currently.</details>
 
 then, we ran `run_cts` by Triton for Clock Tree Synthesis, which will create the paths by using most likely the H Algorithm.  
 
   <img width="963" height="1079" alt="Screenshot 2025-10-05 070443"   src="https://github.com/user-attachments/assets/1ad9e8ce-91cb-4613-a3c1-ebb19eaf783a" />  
 
-  
 
+ Checking the file present inside configuration folder, for variables definations:  
+ 
 
+  <img width="955" height="1079" alt="Screenshot 2025-10-05 083047" src="https://github.com/user-attachments/assets/caac7fb0-febf-4cb5-9003-f8b4c51259d5" />
+
+then, we used, `read_lef ` and `read_def` commands for POST CTS:  
+
+```bash
+# Command to run OpenROAD tool
+openroad
+
+# Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/04-10_10-12/tmp/merged.lef
+
+# Reading def fileOP
+read_def /openLANE_flow/designs/picorv32a/runs/04-10_10-12/results/cts/picorv32a.cts.def
+
+# Creating an OpenROAD database to work with
+write_db pico_cts.db
+
+# Loading the created database in OpenROAD
+read_db pico_cts.db
+
+# Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/04-10_10-12/results/synthesis/picorv32a.synthesis_cts.v
+
+# Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+# Link design and library
+link_design picorv32a
+
+# Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/base.sdc
+
+# Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+# Check syntax of 'report_checks' command
+help report_checks
+
+# Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Exit to OpenLANE flow
+exit
+```
 
 
 
