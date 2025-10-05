@@ -212,10 +212,156 @@ magic -d XR &
 
 <img width="952" height="1047" alt="Screenshot 2025-10-03 165523" src="https://github.com/user-attachments/assets/55d45f61-2fbb-48fe-b059-7fb5e932ae6e" />  
 
- <img width="948" height="1079" alt="Screenshot 2025-10-03 170511" src="https://github.com/user-attachments/assets/0ea0280c-487c-4f05-ab03-2945b6f46103" />  
-
-   
+ <img width="948" height="1079" alt="Screenshot 2025-10-03 170511" src="https://github.com/user-attachments/assets/0ea0280c-487c-4f05-ab03-2945b6f46103" />    
  
+
+  <img width="884" height="337" alt="Screenshot 2025-10-03 171244" src="https://github.com/user-attachments/assets/d19385bf-d49b-4535-8cae-6a5586d145dc" />  
+  
+<img width="952" height="1017" alt="Screenshot 2025-10-03 173950" src="https://github.com/user-attachments/assets/12076a4e-5842-4334-a5e3-be0a85ff4cb0" />  
+
+<img width="957" height="900" alt="Screenshot 2025-10-03 174135" src="https://github.com/user-attachments/assets/28b409f8-a99b-4abe-b9d4-abf9641b5f0b" />  
+
+<img width="957" height="1079" alt="Screenshot 2025-10-03 180034" src="https://github.com/user-attachments/assets/4bc76c62-10ff-400b-8957-e41b968541e3" />
+
+<img width="881" height="346" alt="Screenshot 2025-10-03 181503" src="https://github.com/user-attachments/assets/c8410a83-011c-49cc-b787-fc5b47439eae" />  
+certain modificiations were done, so to mark the error, which was hidden.  
+next we have to fix N-Well, which was overlapping the Deep N-well and the dimensions which was needed to be added was 0.4 micrometre, so to fix this error.  
+ <img width="665" height="495" alt="Screenshot 2025-10-04 094632" src="https://github.com/user-attachments/assets/090f74b5-5015-478d-abf4-e09f42868758" />
+ 
+<img width="653" height="499" alt="Screenshot 2025-10-04 094947" src="https://github.com/user-attachments/assets/773e610b-87a3-43c4-97f4-40bab5c9c2c1" />  
+
+
+<img width="656" height="503" alt="Screenshot 2025-10-04 095146" src="https://github.com/user-attachments/assets/7979d8ba-5a9f-449e-9959-3a0206d7522a" />  
+
+Given below is the tracking information, which are metal traces used for routing.  
+from this we can find the pitch values, or number of grid boxed inside the selected outer box.
+
+<img width="613" height="339" alt="Screenshot 2025-10-04 111056" src="https://github.com/user-attachments/assets/2616bb0f-8864-4eb0-ab24-ac9d2636bb09" />    
+in the tkcon window we have used the `grid` command and setted the values as  
+```
+grid 0.46um 0.34um 0.23um 0.17um
+```
+which are similar to the values finded out in the routing file.
+Furthermore, we looked upon 3 conditions which we have to remember: intersection, width to be odd multiple and height have to be even multiple.  
+
+<img width="959" height="1017" alt="Screenshot 2025-10-04 114711" src="https://github.com/user-attachments/assets/47628344-23c3-467f-acba-c46057319333" />  
+Next, we were exposed to how ports are named and attached to the layout files (Magic ignores the port definations, but it is useful for placement)  
+<img width="415" height="273" alt="Screenshot 2025-10-04 115909" src="https://github.com/user-attachments/assets/face5495-3cf1-4ab8-9f7a-54d4868d897b" />
+then, we saved it as custom inverter with the name sky130_vsdinv, which we will use in the future placements and routing stages.  
+
+<img width="960" height="1079" alt="Screenshot 2025-10-04 122730" src="https://github.com/user-attachments/assets/0e835f8d-b3c3-458c-ab89-119782c55146" />
+<img width="957" height="1079" alt="Screenshot 2025-10-04 123849" src="https://github.com/user-attachments/assets/2475cb85-f1b9-4d0e-9af0-1bd6a8004933" />  
+
+then we, checked the config.tcl file and edited it by adding the following commands:  
+```tcl
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+```
+
+<img width="957" height="1077" alt="Screenshot 2025-10-04 124611" src="https://github.com/user-attachments/assets/db17432d-206c-4e4a-8fe6-4d34b507aa3e" />
+
+rerunning the openlane flow  so, to check the command for overwriting the existing file in the same directory, and after preparing our design we are supposed to add the following commands:  
+```bash
+# commands to load merged.lef having our custom inverter
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Know more about synth strategy from the readme.md file located in the openlane 
+echo $::env(SYNTH_STRATEGY)
+
+# Command to set new value for SYNTH_STRATEGY from AREA "0"
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# Command to display current value of variable SYNTH_BUFFERING to check whether it's enabled
+echo $::env(SYNTH_BUFFERING)
+
+# Command to display current value of variable SYNTH_SIZING
+echo $::env(SYNTH_SIZING)
+
+# Command to set new value for SYNTH_SIZING from 0
+set ::env(SYNTH_SIZING) 1
+
+# Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not (sky inverter )
+echo $::env(SYNTH_DRIVING_CELL)
+```
+
+then we run `run_synthesis` command followed by placement and we get our Total Negative Slack value as -759.46 and Worst Negative Slack value as -24.89 in ns. These violations are expected to be fixed.  
+
+  <img width="960" height="1079" alt="Screenshot 2025-10-04 130325" src="https://github.com/user-attachments/assets/6b9bd5b4-caff-4755-a12f-397e3d6c5a9a" />  
+  
+<img width="950" height="1076" alt="Screenshot 2025-10-04 144412" src="https://github.com/user-attachments/assets/7d57baf3-02c0-4ac3-9fcb-32a1695ae155" />  
+
+<img width="961" height="1079" alt="Screenshot 2025-10-04 144420" src="https://github.com/user-attachments/assets/d906fe48-8dbd-46c0-9921-3d8c726e00d9" />
+
+we, have confirmed the custom inverter from the merged.lef file  
+
+<img width="958" height="1079" alt="Screenshot 2025-10-04 155544" src="https://github.com/user-attachments/assets/17ecb221-2c39-4fa0-9e5f-9717a4eaa260" />
+
+Few errors like  in the image and is solved by using the commands  
+~~~
+init_floorplan
+place_io
+tap_decap_or
+~~~
+
+<img width="960" height="1079" alt="Screenshot 2025-10-04 160525" src="https://github.com/user-attachments/assets/c685bc42-b340-4b8b-b536-217630449cd6" />  
+
+Resizer.lib error which was solved by moving the required file to the project directory.  
+
+<img width="895" height="179" alt="Screenshot 2025-10-04 161154" src="https://github.com/user-attachments/assets/d17b9965-c2eb-40f7-9609-c8751352c115" />  
+
+
+
+then we use `run_placement` command   
+
+<img width="956" height="1079" alt="Screenshot 2025-10-04 163804" src="https://github.com/user-attachments/assets/6daf83ce-69a1-42d6-9021-639a534b1621" />  
+Using magic we have confirmed the placement of our custom inverter.   
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+
+
+  <img width="961" height="1079" alt="Screenshot 2025-10-04 164115" src="https://github.com/user-attachments/assets/f75e9d7e-614e-46ca-9651-742ffcad65c0" />
+
+<img width="962" height="1079" alt="Screenshot 2025-10-04 164825" src="https://github.com/user-attachments/assets/8eff358f-914c-4a19-b443-e1a6959b2229" />  
+
+<img width="960" height="1077" alt="Screenshot 2025-10-04 165356" src="https://github.com/user-attachments/assets/b2a3cd42-5b08-4ebe-9d3a-2ea0ae6adce7" />  
+
+then, we note the capacitance value for using it in the sdc written by us. We have also created pre_sta.conf file for Static Timing Analysis by using the command `sta pre_sta.conf`
+
+<img width="952" height="1079" alt="Screenshot 2025-10-04 191939" src="https://github.com/user-attachments/assets/9f4527d2-32e9-4f1d-adc1-0857b3a4fe6a" />  
+
+<img width="955" height="1079" alt="Screenshot 2025-10-04 195549" src="https://github.com/user-attachments/assets/e7b47dcf-a3a7-4009-9764-660f5be42f38" />
+
+then we, use `replace_cell <cell_name> <new_cell_name>` command to reduce the slack by noting the cells having the most delay and fanout and replacing them from the alternatives of it from the library.   
+
+
+<img width="944" height="1079" alt="Screenshot 2025-10-04 203336" src="https://github.com/user-attachments/assets/20ea4aa5-1094-4099-becf-59b6d8355eee" />  
+
+
+<img width="959" height="1079" alt="Screenshot 2025-10-04 204858" src="https://github.com/user-attachments/assets/dc8d1b82-cd02-4351-817e-b1a17aa81c18" />  
+slack reduced by  1.8ns
+<img width="1085" height="1079" alt="Screenshot 2025-10-04 222138" src="https://github.com/user-attachments/assets/41003e9d-2adf-412f-8cce-cc5407b7007f" />
+
+it is a crucial stage to complete it by using `write_verilog <synthesized netlist name eg. picorv32.v>` command after the possible slack reductions.   
+
+then, we ran `run_cts` by Triton for Clock Tree Synthesis, which will create the paths by using most likely the H Algorithm.  
+
+  <img width="963" height="1079" alt="Screenshot 2025-10-05 070443"   src="https://github.com/user-attachments/assets/1ad9e8ce-91cb-4613-a3c1-ebb19eaf783a" />  
+
+  
+
+
+
+
+
+  
+  
+  
 
 
 
