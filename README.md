@@ -2,11 +2,6 @@
 ## 2 weeks workshop (Digital VLSI)
 <details>
   <summary> INTRODUCTION </summary>
-2 week workshop strucured 5 days and example:  
-  below first part is the main section i.e sky130 day 3 after - is its topic and SKY130_D3_SK2 is sub section SKY_L9 is its sub-sub section.This was the format the video lectures were organized.
-Sky130 Day 3 - Design library cell using Magic Layout and ngspice characterization
-SKY130_D3_SK2 - Inception of Layout ÃÂ CMOS fabrication process
-SKY_L9 - Lab steps to create std cell layout and extract spice netlist
 
 Free and Open Source Software (FOSS) and Free And Open Source Silicon (FOSSi)
 EDA tools and opensource being an advantage.The workshop includes short videos and gives a good understanding for how chip design process forks.It tells how ASIC design flow works with more emphasis on the Back-End.
@@ -16,7 +11,13 @@ VLSI which stands for Very Large Scaling Industry refers to the scaling of size 
 
 Further more chip architecture was discussed along with basic CMOS(complementary metal oxide semiconductor technology) concept that tells the reason for the steps done in the backend. Further more the workshop was equipped with the labs and assignment as well, which gives hands on experience, and practical insights of the backend process.
 
-From the below image our workshop is more focused towards the team b
+This 2-week workshop provides a structured introduction to digital VLSI design using Free and Open Source Software (FOSS) and Silicon (FOSSi). The video lectures were organized in a nested format, for example:
+
+> * **Sky130 Day 3** – Design library cell using Magic Layout and ngspice characterization
+>     * **SKY130_D3_SK2** – Inception of Layout – CMOS fabrication process
+>       * **SKY_L9** – Lab steps to create std cell layout and extract spice netlist
+
+We explored fundamental concepts like VLSI (Very Large Scale Integration), CMOS technology, and chip architecture, all reinforced with hands-on labs and assignments. From the image below, our workshop is more focused toward Team B (Physical Design).
 
 <img width="940" height="589" alt="image" src="https://github.com/user-attachments/assets/c7c9d77f-e04e-407d-82b1-cec7a2a09989" />
 
@@ -457,10 +458,14 @@ report_clock_skew -setup
 
 
 
-<img width="960" height="1079" alt="Screenshot 2025-10-05 085910" src="https://github.com/user-attachments/assets/0ff563d3-113b-4b3e-8bb7-d61f136582e6" />  
-<img width="953" height="1079" alt="Screenshot 2025-10-05 091404" src="https://github.com/user-attachments/assets/2a73ce32-9cab-44a3-8912-4580181ebb9d" />
-<img width="956" height="1079" alt="Screenshot 2025-10-05 091437" src="https://github.com/user-attachments/assets/2fa49088-dae1-420c-840c-e06a933617c3" />
-<img width="957" height="1079" alt="Screenshot 2025-10-05 091556" src="https://github.com/user-attachments/assets/09a0fce6-e295-4c07-b794-a07c24de7535" />  
+<img width="960" height="1079" alt="Screenshot 2025-10-05 085910" src="https://github.com/user-attachments/assets/0ff563d3-113b-4b3e-8bb7-d61f136582e6" />   
+
+<img width="953" height="1079" alt="Screenshot 2025-10-05 091404" src="https://github.com/user-attachments/assets/2a73ce32-9cab-44a3-8912-4580181ebb9d" />  
+
+<img width="956" height="1079" alt="Screenshot 2025-10-05 091437" src="https://github.com/user-attachments/assets/2fa49088-dae1-420c-840c-e06a933617c3" />  
+
+<img width="957" height="1079" alt="Screenshot 2025-10-05 091556" src="https://github.com/user-attachments/assets/09a0fce6-e295-4c07-b794-a07c24de7535" />    
+
 
 #Power Distribution Network And Routing  
 A PDN (or Power Distribution Network) is the complete path that delivers power from the supply to each transistor inside a chip.
@@ -474,38 +479,50 @@ gen_pdn
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 18-pdn.def &
 #commands can be different so always cross-check
 ```
-<img width="953" height="1079" alt="Screenshot 2025-10-05 093404" src="https://github.com/user-attachments/assets/d81b9186-02ea-4964-a900-e556070f3170" />
+<img width="953" height="1079" alt="Screenshot 2025-10-05 093404" src="https://github.com/user-attachments/assets/d81b9186-02ea-4964-a900-e556070f3170" />  
 
-<img width="965" height="1079" alt="Screenshot 2025-10-05 092100" src="https://github.com/user-attachments/assets/423eb47d-3c7c-48d6-91f4-670da8541c93" />
 
+<img width="965" height="1079" alt="Screenshot 2025-10-05 092100" src="https://github.com/user-attachments/assets/423eb47d-3c7c-48d6-91f4-670da8541c93" />  
+
+ 
  then, we ran `run_routing` for detailed routing.  
-<img width="958" height="1079" alt="Screenshot 2025-10-05 094954" src="https://github.com/user-attachments/assets/d9ece3fa-8c50-40d9-8882-46662d2cbf63" />  
+<img width="958" height="1079" alt="Screenshot 2025-10-05 094954" src="https://github.com/user-attachments/assets/d9ece3fa-8c50-40d9-8882-46662d2cbf63" />    
+
 ```
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
 ```
-<img width="961" height="1079" alt="Screenshot 2025-10-05 095508" src="https://github.com/user-attachments/assets/f39a3805-2348-4ebc-b28f-c9ce8c0582c9" />  
-<img width="962" height="1075" alt="Screenshot 2025-10-05 095213" src="https://github.com/user-attachments/assets/d58b3848-cea1-4dd9-964f-bf768ef8056f" />
+<img width="961" height="1079" alt="Screenshot 2025-10-05 095508" src="https://github.com/user-attachments/assets/f39a3805-2348-4ebc-b28f-c9ce8c0582c9" />    
+
+<img width="962" height="1075" alt="Screenshot 2025-10-05 095213" src="https://github.com/user-attachments/assets/d58b3848-cea1-4dd9-964f-bf768ef8056f" />  
 
 
-##Parasitics Exxtraction    
+
+## Parasitics Exxtraction    
 Creating the environment for SPEF_EXTRACTOR:
-<img width="956" height="1077" alt="Screenshot 2025-10-05 104417" src="https://github.com/user-attachments/assets/9c2f32b1-c245-4bb8-92a4-53ad4d724421" />  
+<img width="956" height="1077" alt="Screenshot 2025-10-05 104417" src="https://github.com/user-attachments/assets/9c2f32b1-c245-4bb8-92a4-53ad4d724421" />    
+
 We encountered the parsing error:  
-<img width="962" height="1079" alt="Screenshot 2025-10-05 110606" src="https://github.com/user-attachments/assets/aa3c2937-ab93-4a82-8ca8-911547a2ce27" />  
+<img width="962" height="1079" alt="Screenshot 2025-10-05 110606" src="https://github.com/user-attachments/assets/aa3c2937-ab93-4a82-8ca8-911547a2ce27" />    
+
+
 and fixed it by going to the lef_util.py file and make the following changes in line number 380
-<img width="958" height="1079" alt="Screenshot 2025-10-05 110553" src="https://github.com/user-attachments/assets/dec6eca3-3ee2-439a-8d62-f37a53033aa0" />  
+<img width="958" height="1079" alt="Screenshot 2025-10-05 110553" src="https://github.com/user-attachments/assets/dec6eca3-3ee2-439a-8d62-f37a53033aa0" />    
+
 then, we ran the below command for the extraction process:  
 ```ubuntu terminal
 python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/04-10_10-12/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/04-10_10-12/results/routing/picorv32a.def
 ```
 whose result is seen below:  
 
-<img width="960" height="1079" alt="Screenshot 2025-10-05 112559" src="https://github.com/user-attachments/assets/c3586f3d-1947-40c3-ac2e-0c6f639b9fa3" />  
+<img width="960" height="1079" alt="Screenshot 2025-10-05 112559" src="https://github.com/user-attachments/assets/c3586f3d-1947-40c3-ac2e-0c6f639b9fa3" />    
 
-<img width="957" height="1079" alt="Screenshot 2025-10-05 112544" src="https://github.com/user-attachments/assets/fe918561-82d9-4d95-af8a-53f2bcf76a11" />  
-<img width="967" height="1079" alt="Screenshot 2025-10-05 121655" src="https://github.com/user-attachments/assets/9fd11937-1deb-4607-9ada-b86ccf71505e" />
 
-<img width="960" height="1079" alt="Screenshot 2025-10-05 121904" src="https://github.com/user-attachments/assets/57bbff99-4475-48d2-83db-efb04dd12587" />    
+<img width="957" height="1079" alt="Screenshot 2025-10-05 112544" src="https://github.com/user-attachments/assets/fe918561-82d9-4d95-af8a-53f2bcf76a11" />    
+
+<img width="967" height="1079" alt="Screenshot 2025-10-05 121655" src="https://github.com/user-attachments/assets/9fd11937-1deb-4607-9ada-b86ccf71505e" />  
+
+
+<img width="960" height="1079" alt="Screenshot 2025-10-05 121904" src="https://github.com/user-attachments/assets/57bbff99-4475-48d2-83db-efb04dd12587" />      
 Final-Timing Reports after Parasitics Extraction:  
 
 <img width="962" height="1079" alt="Screenshot 2025-10-05 122006" src="https://github.com/user-attachments/assets/1daedd99-a850-43b5-9833-4fd56da257b4" />  
