@@ -251,8 +251,6 @@ Rise and Fall Time Calculation:
 .meas tran tfall PARAMS = 't10f - t90f';
 ```
 
-<img width="975" height="383" alt="image" src="https://github.com/user-attachments/assets/5e87ebc3-95eb-4f5f-8ae0-cba22084181a" />
-
   Downloading the drc by using the following command to perform drc violations fixing:  
 ```bash
 
