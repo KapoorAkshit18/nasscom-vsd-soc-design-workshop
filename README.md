@@ -1,8 +1,28 @@
-# nasscom-vsd-soc-design-workshop
-## 2 weeks workshop (Digital VLSI)
-<details>
-  <summary> INTRODUCTION </summary>
+# NASSCOM–VSD SoC Design Workshop
+## 2 weeks workshop on Digital VLSI using Sky130 PDK
+## 📑 Table of Contents  
+- [Introduction](#-introduction)
+- [Magic Tool Overview](#-magic-tool-overview) 
+- [Linux Commands Used](#️-linux-commands-used)  
+- [Lab 1 – Opening OpenLane](#-lab-1--opening-openlane)  
+- [Lab 2 – Synthesis & Floorplan](#-lab-2--synthesis--floorplan)  
+- [Layout Creation in Magic](#-layout-creation-in-magic)  
+- [Placement](#-placement)  
+- [Custom Inverter Layout](#-custom-inverter-layout)  
+- [CMOS Cross-Section](#-cmos-cross-section)  
+- [SPICE Simulation](#-spice-simulation)  
+- [Conclusion](#-conclusion)  
 
+---
+
+<details>
+  <summary> Overview </summary>
+*Highlights**
+- **Tools Used:** OpenLANE, Magic, ngspice, OpenROAD  
+- **PDK:** SkyWater SKY130A (130 nm open-source)  
+- **Design Used:** `picorv32a` (RISC-V Core)  
+- **Duration:** 2 weeks (structured 5 + 5 days)  
+- **Environment:** Oracle VM (Ubuntu)
 Free and Open Source Software (FOSS) and Free And Open Source Silicon (FOSSi)
 EDA tools and opensource being an advantage.The workshop includes short videos and gives a good understanding for how chip design process forks.It tells how ASIC design flow works with more emphasis on the Back-End.
 The Back-End usually involves steps like Synthesis,STA of the .v file then Design for Testability (DFT), Physical Design, then Physical Verification and finally the GDS-II file creation.Gds is the file saving format given to the foundries and normally it is in binary involving geometric shapes.
@@ -17,29 +37,46 @@ This 2-week workshop provides a structured introduction to digital VLSI design u
 >     * **SKY130_D3_SK2** – Inception of Layout – CMOS fabrication process
 >       * **SKY_L9** – Lab steps to create std cell layout and extract spice netlist
 
-We explored fundamental concepts like VLSI (Very Large Scale Integration), CMOS technology, and chip architecture, all reinforced with hands-on labs and assignments. From the image below, our workshop is more focused toward Team B (Physical Design).
+We explored fundamental concepts like VLSI (Very Large Scale Integration), CMOS technology, and chip architecture, all reinforced with hands-on labs and assignments. From the image below, our workshop is more focused toward Team B (Physical Design). Labs along with the assessments are conducted. Linux System and Commands were used throughout the workshop period.
+
 
 <img width="940" height="589" alt="image" src="https://github.com/user-attachments/assets/c7c9d77f-e04e-407d-82b1-cec7a2a09989" />
 
 
 Virutal machine by oracle is utilized as most of the VLSI tools are based on linux so it provides isolated environment for working effectively.Linux has more advantage and for critical process like chip design which is the brain of any device or machine is a preferred choice.This documentation is more of picture based (means do the steps by keeping the images as a reference in your mind) so follow accordingly.
+</details>
 
-Magic Tool
+## Magic Tool Overview  
+
 As per Fossi Dial up 
 Magic tool is more than DRC, it can read and write GDS.It can extract and netlist (SPICE file).LEF(Library Exchange File)/DEF(Design Exchange File) compatible.Wiring refers to physical joining of the network elements whereas routing defines rules for that.This feature is also included in the Magic.Plots are available for the analysis of the results in a graphical manner.
 More features
 - Paint and Erase 
 - Instead of bins it works on single base 
 
-   Labs along with the assessments are conducted.
-
   
-</details>
-Linux Commands used throughout the session
+##  Introduction
+The workshop emphasized **FOSSi (Free and Open-Source Silicon Initiative)** and demonstrated how open-source EDA tools democratize chip design.  
 
+It followed the complete **ASIC design flow**:
+1. Synthesis  
+2. Floorplanning  
+3. Placement  
+4. Clock Tree Synthesis (CTS)  
+5. Routing  
+6. Static Timing Analysis (STA)  
+7. Physical Verification (DRC/LVS)  
+8. GDS-II generation  
 
+Each step was practically implemented using **OpenLANE automation**, **Magic layout**, and **ngspice** simulation:  
 
-**Lab 1** : To open the openflow 
+- **Oracle VM VirtualBox** used for isolated Linux environment  
+- **Linux OS** preferred for chip design reliability  
+- **Magic** – layout editing, DRC/LVS, GDSII generation  
+- **ngspice** – circuit simulation  
+- **OpenLane** – RTL-to-GDSII flow
+  
+## **Lab 1** : To open the openflow   
 1. type `docker` <!-- make sure you are in openlane working directory whose path is /desktop/work/tools/openlane_working_dir/openlane -->
 2. type second command `./flow.tcl -interactive`   <!-- this will open openlane in an interactive mode -->
 
@@ -53,7 +90,7 @@ cd ../  // makes the directory levele two step up
 ```
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
-**LAB 2** To run synthesis and floorplan 
+## **LAB 2**: To run Synthesis and Floorplan 
 after openlane is opened, type command `prep -design picorv32a`
 The success preperation message will look like below  
 
@@ -83,7 +120,7 @@ Equals to  10.84 percentile
 ![Uploading image.png…]()
 
 
-**Lab**  To create layout of the picorv32a
+## **Lab**:  To create layout of the picorv32a
 
 In the results directory of the floorplan open it in the terminal and type  command:
 `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &` 
@@ -535,7 +572,18 @@ Final-Timing Reports after Parasitics Extraction:
 * Learned **DRC, placement, floorplan, and SPICE netlist extraction**
 * Gained **hands-on experience** with open-source PDKs and EDA tools
 
---- 
+---   
+Author: Akshit Kapoor  
+
+Affiliation: B.Tech ECE — VLSI & Embedded Systems  
+ 
+Year: 2025  
+
+Tools: OpenLANE · Magic · OpenROAD · ngspice  
+
+Design: picorv32a (RISC-V Core)  
+
+---  
 
 
 
