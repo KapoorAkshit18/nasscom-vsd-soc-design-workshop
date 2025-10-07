@@ -234,7 +234,22 @@ the output was:
 ![image](https://github.com/user-attachments/assets/6f5a0cd2-bd80-4451-9971-802eaf4ef509)
 
 expected output is 
-![image](https://github.com/user-attachments/assets/c452a673-866b-46d7-9075-a4055fefab09)
+![image](https://github.com/user-attachments/assets/c452a673-866b-46d7-9075-a4055fefab09)  
+
+Further more for measuring the delay values we use the below commands:  
+Rise and Fall Time Calculation:  
+```  
+#Rise transition time calc
+.meas tran t10 TRIG v(out) val = 0.18 RISE = 1;
+.meas tran t80 TRIG v(out) val = 1.44 RISE = 1;
+.meas tran trise PARAMS = 't90 - t10'; 
+```
+```
+#Fall transition time calc
+.meas tran t80f TRIG v(out) val = 1.44 FALL = 1;
+.meas tran t10f TRIG v(out) val = 0.18 FALL = 1;
+.meas tran tfall PARAMS = 't10f - t90f';
+```
 
 <img width="975" height="383" alt="image" src="https://github.com/user-attachments/assets/5e87ebc3-95eb-4f5f-8ae0-cba22084181a" />
 
