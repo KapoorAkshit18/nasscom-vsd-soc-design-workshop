@@ -467,7 +467,7 @@ report_clock_skew -setup
 <img width="957" height="1079" alt="Screenshot 2025-10-05 091556" src="https://github.com/user-attachments/assets/09a0fce6-e295-4c07-b794-a07c24de7535" />    
 
 
-#Power Distribution Network And Routing  
+# Power Distribution Network And Routing  
 A PDN (or Power Distribution Network) is the complete path that delivers power from the supply to each transistor inside a chip.
 It includes wires, PCB traces, bumps, package pins, on-chip metal layers, and vias.
 
