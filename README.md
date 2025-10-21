@@ -40,10 +40,11 @@ This 2-week workshop provides a structured introduction to digital VLSI design u
 >     * **SKY130_D3_SK2** – Inception of Layout – CMOS fabrication process
 >       * **SKY_L9** – Lab steps to create std cell layout and extract spice netlist
 
-We explored fundamental concepts like VLSI (Very Large Scale Integration), CMOS technology, and chip architecture, all reinforced with hands-on labs and assignments. From the image below, our workshop is more focused toward Team B (Physical Design). Labs along with the assessments are conducted. Linux System and Commands were used throughout the workshop period.
+We explored fundamental concepts like VLSI (Very Large Scale Integration), CMOS technology, and chip architecture, all reinforced with hands-on labs and assignments. From the image below, our workshop is more focused toward Team B (Physical Design). Labs along with the assessments are conducted. Linux System and Commands were used throughout the workshop period. In the figure given below please mark layout instead of layoiut.
 
 
-<img width="940" height="589" alt="image" src="https://github.com/user-attachments/assets/c7c9d77f-e04e-407d-82b1-cec7a2a09989" />
+<img width="940" height="589" alt="image" src="https://github.com/user-attachments/assets/c7c9d77f-e04e-407d-82b1-cec7a2a09989" />  
+
 
 
 Virutal machine by oracle is utilized as most of the VLSI tools are based on linux so it provides isolated environment for working effectively.Linux has more advantage and for critical process like chip design which is the brain of any device or machine is a preferred choice.This documentation is more of picture based (means do the steps by keeping the images as a reference in your mind) so follow accordingly.
