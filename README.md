@@ -1,19 +1,20 @@
 # NASSCOM–VSD SoC Design Workshop
 ## 2 weeks workshop on Digital VLSI using Sky130 PDK
-## 📑 Table of Contents  
-- [Introduction](#-introduction)
-- [Magic Tool Overview](#-magic-tool-overview) 
-- [Linux Commands Used](#️-linux-commands-used)  
-- [Lab 1 – Opening OpenLane](#-lab-1--opening-openlane)  
-- [Lab 2 – Synthesis & Floorplan](#-lab-2--synthesis--floorplan)  
-- [Layout Creation in Magic](#-layout-creation-in-magic)  
-- [Placement](#-placement)  
-- [Custom Inverter Layout](#-custom-inverter-layout)  
-- [CMOS Cross-Section](#-cmos-cross-section)  
-- [SPICE Simulation](#-spice-simulation)  
-- [Conclusion](#-conclusion)  
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Magic Tool Overview](#magic-tool-overview)
+- [Lab 1 – Opening OpenLane](#lab-1--opening-openlane)
+- [Lab 2 – Synthesis and Floorplan](#lab-2--synthesis-and-floorplan)
+- [Layout Creation in Magic](#layout-creation-in-magic)
+- [Placement](#placement)
+- [SPICE Simulation](#spice-simulation)
+- [Power Distribution Network And Routing](#power-distribution-network-and-routing)
+- [Parasitic Extraction](#parasitic-extraction)
+- [Conclusion](#conclusion)
 
 ---
+
 
 <details>
   <summary> Overview </summary>   
@@ -80,7 +81,7 @@ Each step was practically implemented using **OpenLANE automation**, **Magic lay
 - **ngspice** – circuit simulation  
 - **OpenLane** – RTL-to-GDSII flow
   
-## **Lab 1** : To open the openflow   
+## Lab 1 – Opening OpenLane   
 1. type `docker` <!-- make sure you are in openlane working directory whose path is /desktop/work/tools/openlane_working_dir/openlane -->
 2. type second command `./flow.tcl -interactive`   <!-- this will open openlane in an interactive mode -->
 
@@ -94,7 +95,7 @@ cd ../  // makes the directory levele two step up
 ```
 ![start](https://github.com/user-attachments/assets/08584779-4e80-4f0a-85ad-b2579e5685a7)
 
-## **LAB 2**: To run Synthesis and Floorplan 
+## Lab 2 – Synthesis and Floorplan 
 after openlane is opened, type command `prep -design picorv32a`
 The success preperation message will look like below  
 
@@ -124,7 +125,7 @@ Equals to  10.84 percentile
 ![Uploading image.png…]()
 
 
-## **Lab**:  To create layout of the picorv32a
+## Layout Creation in Magic
 
 In the results directory of the floorplan open it in the terminal and type  command:
 `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &` 
@@ -133,7 +134,7 @@ In the results directory of the floorplan open it in the terminal and type  comm
 from zooming the blocks are seen with its unique role in overall  
 
 
-**Placement**
+## Placement
 again the synthesis process is followed in sequence creating folder named 28-04-11:55  to `run_placement`   
 
 ![image](https://github.com/user-attachments/assets/7c534eca-cafe-4bb8-a336-9cd1969d1b20)
@@ -551,7 +552,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 
 
-## Parasitics Exxtraction    
+## Parasitic Extraction    
 Creating the environment for SPEF_EXTRACTOR:
 <img width="956" height="1077" alt="Screenshot 2025-10-05 104417" src="https://github.com/user-attachments/assets/9c2f32b1-c245-4bb8-92a4-53ad4d724421" />    
 
